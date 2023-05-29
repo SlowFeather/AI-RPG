@@ -41,7 +41,7 @@ public class GPTManager : MonoBehaviour
 
     private void Start()
     {
-        openAIApi = new OpenAIApi("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");
+        openAIApi = new OpenAIApi("sk-xxxxxxxxxxx");
 
         Create_Image();
     }
@@ -52,12 +52,7 @@ public class GPTManager : MonoBehaviour
         ClearAllChatMessage();
 
         //新建一个openai
-        //老秦的
-        openAIApi = new OpenAIApi("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");
-        //laofei 歇菜了
-        //openAIApi = new OpenAIApi("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", "org-OFjYM7WHHrdMmO8lWndXsjDS");
-
-        //openAIApi = new OpenAIApi("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", "org-OFjYM7WHHrdMmO8lWndXsjDS");
+        openAIApi = new OpenAIApi("sk-xxxxxxxxx");
 
 
         SendRequest();
@@ -66,23 +61,7 @@ public class GPTManager : MonoBehaviour
     }
     public async Task Create_Image()
     {
-        //var req = new CreateImageRequest
-        //{
-        //    Prompt = gamStyle+"中的NPC",
-        //    N = 1,
-        //    Size = "256x256",
-        //};
-        //var res = await openAIApi.CreateImage(req);
-        //req.
-        //Debug.Log(res.Data.Count);
-        //Debug.Log(res.Data.ToString());
-        //OpenAI.ImageData imageData = res.Data[0];
-        //Debug.Log(imageData.Url);
-
-        //GetImageByUnityWebRequest(startPanel.myImage, imageData.Url);
         await CreateImage(gamStyle+"中的NPC", startPanel.myImage);
-
-        //Base64ToImag(startPanel.myImage, res.Data[0].B64Json, new Vector2(256, 256));
     }
     public async Task CreateImage(string msg,Image image)
     {
